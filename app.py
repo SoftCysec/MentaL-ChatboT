@@ -17,6 +17,7 @@ def index():
 def chatbot():
     user_input = request.form["text"]
     prompts = [
+        "Hello, Welcome",
         "Mental health consultation: ",
         "Mental symptoms: ",
         "Mental health history: ",
