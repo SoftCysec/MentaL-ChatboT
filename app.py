@@ -10,7 +10,8 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    title = "MentaL ChatboT"
+    return render_template('index.html', title=title)
 
 @app.route("/", methods=["POST"])
 def chatbot():
