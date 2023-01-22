@@ -1,11 +1,16 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, request
+from flask import Flask, request, render_template
 import openai
 
 load_dotenv()
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route("/", methods=["POST"])
 def chatbot():
